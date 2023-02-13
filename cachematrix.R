@@ -2,17 +2,17 @@
 ## functions do
 
 ## Write a short comment describing this function
-
+#function creates a special "matrix" object that can cache its inverse
 makeCacheMatrix <- function(x = matrix()) {
-  inv<-NULL
+  inv<-NULL #inv to hold value of matrix inverse
   set<-function(y){
-    x<<-y
+    x<<-y   #value of matrix in parent environment
     inv <<- NULL
   }
-  get<-function(x)
-    setinverse<-function(inverse)
+  get<-function(x)   #get function to return value of matrix argument
+    setinverse<-function(inverse)   #assign value of inv in parent environment
       inv<<- inverse
-  getinverse<-function()inv
+  getinverse<-function()inv  #get value of inv
   list(set = set, get=get, setinverse= setinverse, getinverse= getinverse)
 }
 
